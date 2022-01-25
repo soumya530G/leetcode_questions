@@ -8,7 +8,6 @@ class Solution {
             prod *= n%10;
             n /= 10;
         }
-        int result = prod-sum;
-        return result;
+        return prod-sum;
     }
 }

@@ -1,20 +1,16 @@
 class Solution {
-    public static int cal(int num)
-    {
-        int sum = 0;
-        while(num > 0)
-        {
-            sum += num % 10;
-            num /= 10;
-        }
-        return sum;
-    }
     public int addDigits(int num) {
-        num = cal(num);
-        while(num >= 10)
+        if(num == 0)
         {
-            num = cal(num);
+            return 0;
         }
-        return num;
+        else if(num % 9 == 0)
+        {
+            return 9;
+        }
+        else
+        {
+            return num % 9;
+        }
     }
 }

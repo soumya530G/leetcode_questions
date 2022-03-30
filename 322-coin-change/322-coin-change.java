@@ -2,7 +2,7 @@ class Solution {
     public int coinChange(int[] coins, int amount) {
         int []dp = new int[amount + 1];
         coinchange(coins, amount, dp);
-        if(dp[amount] == dp.length){
+        if(dp[amount] == 1e9){
             return -1;
         }
         return dp[amount];
@@ -14,7 +14,7 @@ class Solution {
         if(dp[amount] != 0){
             return dp[amount];
         }
-        dp[amount] = dp.length;
+        dp[amount] = (int)1e9;
         for(int i: coins){
             if(amount >= i){
                dp[amount] = Math.min(dp[amount], coinchange(coins, amount - i, dp) + 1);

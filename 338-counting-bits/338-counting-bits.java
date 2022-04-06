@@ -1,16 +1,20 @@
 class Solution {
     public int[] countBits(int n) {
-        int[] ans = new int[n+1];
-        for(int i = 1; i < n + 1; i++){
+       int[] ans = new int[n + 1];
+        for(int i = 0; i < n; i++){
             ans[i] = 0;
         }
-        int offset = 1;
         for(int i = 1; i < n + 1; i++){
-            if(offset * 2 == i){
-                offset = i;
+            //even 
+            if(i % 2 == 0){
+               ans[i] = ans[i / 2]; 
             }
-            ans[i] = 1 + ans[i - offset];
+            //x/2
+            else{
+                ans[i] = 1 + ans[i / 2];
+            }
+            
         }
-    return ans;
+        return ans;
     }
 }

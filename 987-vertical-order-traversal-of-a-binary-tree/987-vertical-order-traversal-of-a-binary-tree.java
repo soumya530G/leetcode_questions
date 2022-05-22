@@ -16,8 +16,8 @@
 class Solution {
     static class pair implements Comparable<pair>{
         TreeNode node;
-        int w;
-        int d;
+        int w; //vert
+        int d; //hor
         
         pair(TreeNode node, int w, int d){
             this.node = node;
@@ -26,6 +26,7 @@ class Solution {
         }
         // this - other means increasing (i.e, we want the smallest value)
         // other - this means decreasing (i.e, we want the largest value among them)
+        //this function is used for cases where we have to decide which node at the same row comes first like in example 2nd with 5 and 6 node
         public int compareTo(pair other){
             if(this.d == other.d){
                 return this.node.val - other.node.val;
@@ -59,6 +60,7 @@ class Solution {
             }
             else{
                //just add to the existing priority queue at that horizontal index
+               //now when we say we're adding temp we mean the whole pair since temp is of type pair 
                map.get(temp.w).add(temp); 
             }
             //we're adding the curr node's childern to the queue here 

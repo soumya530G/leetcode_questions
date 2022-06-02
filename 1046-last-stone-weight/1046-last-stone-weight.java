@@ -5,9 +5,9 @@ class Solution {
             pq.add(stones[i]);
         }
         while(pq.size() != 1){
-             if(pq.size() == 0) break;
-            int x = pq.remove();
-            if(pq.size() == 0) break;
+             if(pq.size() != 0){
+                int x = pq.remove();
+           
             int y = pq.remove();
             if(x != y){
                 if(y > x){
@@ -16,7 +16,10 @@ class Solution {
                 else if(x > y){
                     pq.add(x - y);
                 }
-            }
+            } 
+             } else {
+                 break;
+             }
         }
         if(pq.size() == 1) return pq.remove();
        // int n = pq.remove();

@@ -21,8 +21,8 @@ class Solution {
                  break;
              }
         }
-        if(pq.size() == 1) return pq.remove();
+        return (pq.size() == 1) ? pq.remove(): 0;
        // int n = pq.remove();
-        return 0;
+    //    return 0;
     }
 }

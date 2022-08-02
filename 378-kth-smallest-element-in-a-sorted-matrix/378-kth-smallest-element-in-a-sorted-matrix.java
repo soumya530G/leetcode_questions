@@ -1,9 +1,7 @@
 class Solution {
     public int kthSmallest(int[][] matrix, int k) {
-        int N = 0;
-        for(int i = 0; i < matrix[0].length; i++){
-            N++;
-        }
+        int N = matrix[0].length;
+        
         int ke = N * N;
         int kq = 0;
         int[] arr = new int[ke];

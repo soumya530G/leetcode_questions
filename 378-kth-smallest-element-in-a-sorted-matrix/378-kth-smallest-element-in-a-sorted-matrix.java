@@ -16,14 +16,7 @@ class Solution {
                }
            } 
         }
-        Arrays.sort(arr);
-        int t = 0;
-        for(int i = 0; i < ke; i++){
-            if(i == k - 1)
-                t = arr[i];
-          //  System.out.println(arr[i]);
-        }
-        
-        return t;
+        Arrays.sort(arr);       
+        return arr[k - 1];
     }
 }
